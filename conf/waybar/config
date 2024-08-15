@@ -5,7 +5,6 @@
     "margin-left": 10,
     "margin-right": 10,
     "spacing": 5,
-    "output": ["HDMI-A-1"],
     "modules-left": [
         "hyprland/workspaces",
         "custom/right-arrow-dark",
