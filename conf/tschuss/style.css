@@ -1,0 +1,40 @@
+@define-color text #c6d0f5;
+
+* {font-family: "JetBrains Mono";}
+
+#window {
+    background-color: rgba(51, 29, 59, 0.6);
+    border-radius: 15px;
+}
+
+#bottom_text {
+    font-size: 130px;
+}
+
+button {
+    background-color: rgba(32, 34, 36, 0.4);
+    border: inherit;
+    border-width: 2px;
+    border-radius: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    font-size: 60px;
+    color: @text;
+}
+
+#bottom-text {
+    font-size: 35px;
+    color: @text;
+}
+
+#description-shutdown,
+#description-reboot,
+#description-logout,
+#description-hibernate,
+#description-suspend,
+#description-lock {
+    font-size: 20px;
+    color: @text;
+}

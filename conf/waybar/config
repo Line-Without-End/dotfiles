@@ -1,0 +1,152 @@
+{
+    "layer": "top",
+    "height": 20,
+    "margin-top": 5,
+    "margin-left": 10,
+    "margin-right": 10,
+    "spacing": 5,
+    "output": ["HDMI-A-1"],
+    "modules-left": [
+        "hyprland/workspaces",
+        "custom/right-arrow-dark",
+        "cpu",
+        "memory",
+        "disk",
+        "custom/right-arrow-dark",
+	    "custom/wireguard"
+    ],
+    "modules-center": [
+        "clock",
+        "custom/power"
+    ],
+    "modules-right": [
+        "tray",
+        "custom/left-arrow-dark",
+        "custom/syncthing",
+        "custom/left-arrow-dark",
+        "pulseaudio",
+        "hyprland/language",
+        "network"
+	],
+    
+    "custom/left-arrow-dark": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/wireguard": {
+	"format": "WG:{}",
+        "exec": "~/.config/waybar/scripts/wg-check.sh",
+	"interval": 10,
+        "on-click-right": "~/.config/waybar/scripts/wg-swtich.sh"
+    },
+    "custom/left-arrow-light": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/right-arrow-dark": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/right-arrow-light": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/power": {
+        "format": "⏻",
+        "on-click": "sleep 0.15 && tschuss"
+    },
+    "custom/pacman": {
+		"interval": 3600,
+		"return-type": "json",
+		"exec": "pacman-updates",
+		"exec-if": "exit 0",
+		"on-click": "$TERMINAL -e paru; pkill -SIGRTMIN+8 waybar",
+		"signal": 8
+	},
+    "custom/screensoot": {
+        "format": "🖼",
+        "on-click": "sleep 0.15 && tschuss"
+    },
+    "custom/syncthing": {
+        "format": "Syncthing: {}",
+        "exec": "systemctl is-active syncthing@$USER",
+        "interval": 10,
+        "on-click": "xdg-open http://localhost:8384"
+    },
+
+
+
+    "hyprland/window": {
+		"separate-outputs": true
+    },
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "on-click": "activate"
+    },
+    "hyprland/language": {
+        "format": "{}",
+        "format-en": "|EN|",
+	    "format-ru": "|RU|",
+        "tooltip-format": "{}"
+    },
+
+    "tray": {
+        "spacing": 10
+    },
+    "clock": {
+        "tooltip-format": "{:%A, %B %d, %Y}",
+        "format": "{:%A %d - %H:%M}"
+    },
+    "network": {
+        "format-disconnected": "󰤭 ",
+		"tooltip-format": "Connected",
+		"on-click": "nm-connection-editor"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume:2}%",
+        "format-bluetooth": "{icon}   {volume}%",
+        "format-muted": "muted",
+		"format-icons": {
+			"default": ["", "", "󰕾"]
+		},
+		"tooltip-format": "{volume}% volume",
+        "scroll-step": 1,
+	    "on-click": "pavucontrol",
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+	},
+    "cpu": {
+        "interval": 5,
+        "format": " {usage}%",
+        "max-length": 10,
+        "on-click": "alacritty -e btm --enable_gpu"
+    },
+    "memory": {
+		"interval": 5,
+		"format": " {}%",
+        "on-click": "alacritty -e btm --enable_gpu"
+	},
+    "temperature": {
+        "thermal-zone": 2,
+        "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+        "critical-threshold": 80,
+        "format-critical": "{icon} {temperatureC}°C",
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": ["", "", ""]
+    },
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": " {name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+    "disk": {
+        "interval": 30,
+        "format": "🖴 /home:{percentage_used}%",
+        "path": "/home",
+        "on-click": "partitionmanager"
+    }
+}

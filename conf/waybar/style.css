@@ -1,0 +1,86 @@
+@import "frappe.css";
+* {
+  /* font-family: Roboto, Helvetica, Arial, sans-serif; */
+  /* reference the color by using @color-name */
+  font-family: "JetBrains Mono";
+  font-weight: bold;
+  color: @text;
+  font-size: 18px;
+  border-radius: 10px;
+}
+
+window#waybar {
+  /* you can also GTK3 CSS functions! */
+  background: rgba(48,52,70,0.4);
+  /* border: 2px solid alpha(@crust, 0.3); */
+  border-radius: 10px;
+}
+
+/* window#waybar.empty {
+  opacity: 0.1;
+  margin: 2px;
+} */
+
+#disk,
+#clock,
+#pulseaudio,
+#network,
+#language,
+#workspaces, 
+#temperature,
+#cpu,
+#memory,
+#custom-wireguard,
+#custom-power,
+#custom-syncthing {
+  transition: background-color, color 150ms;
+  padding-right: 8px;
+  padding-left: 8px;
+  background-color: @base;
+  border: 1.5px;
+  border-color: @text;
+  border-style: solid;
+}
+
+#custom-wireguard:hover,
+#custom-syncthing:hover,
+#pulseaudio:hover,
+#network:hover,
+#language:hover,
+#disk:hover,
+#cpu:hover,
+#memory:hover {
+  background-color: @purple;
+  color: @base;
+}
+
+#tray {
+  padding-right: 10px;
+  padding-left: 10px;
+  background-color: @base;
+}
+
+#tray * {
+  background-color: @base;
+}
+
+#tray menu *:hover {
+  transition-duration: 120ms;
+  background-color: @surface0;
+}
+
+#tray menu *:hover * {
+  background-color: @surface0;
+}
+
+#custom-power {
+  padding-right: 12px;
+  padding-left: 12px;
+  border-radius: 100%
+}
+
+#custom-power:hover {
+  background-color: @red;
+  color: black;
+  border-color: black;
+}

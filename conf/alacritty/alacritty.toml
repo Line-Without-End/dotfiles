@@ -1,0 +1,27 @@
+[window]
+decorations = "Full"
+dynamic_padding = false
+opacity = 0.7
+title = "Terminal"
+
+[font]
+size = 14
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font"
+style = "Heavy Italic"
+
+[font.italic]
+family = "Mono Sans Serif"
+style = "Medium Italic"
+
+[font.normal]
+family = "Consolas"
+style = "Bold"
+
+[selection]
+save_to_clipboard = true
+
+[cursor]
+style = {shape = "Beam", blinking = "On"}
+thickness = 0.2
