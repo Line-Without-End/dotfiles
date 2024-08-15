@@ -14,9 +14,9 @@ echo "Setup main programs"
 echo "###################"
 pacman -Sy --noconfirm $main
 
-sleep 2
+sleep 2 
 
-soft=("thunar" "syncthing" "polkit-gnome" "feh" "thunar-volman" "gvfs" "smbclient" "tumbler" "wireguard-tools" "ark") 
+soft=("ttf-jetbrains-mono" "thunar" "syncthing" "polkit-gnome" "feh" "thunar-volman" "gvfs" "smbclient" "tumbler" "wireguard-tools" "ark") 
 echo "#####################"
 echo "Setup additional soft"
 echo "#####################"

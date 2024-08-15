@@ -8,7 +8,6 @@ WG_INTERFACE="wg0"
 # Проверка наличия интерфейса WireGuard
 if ip link show "$WG_INTERFACE" &> /dev/null; then
     sleep 5
-    nmcli con down $WG_NAME
+    nmcli con down "$WG_NAME"
 else
-    nmcli con up $WG_NAME
-fi
+    nmcli con up "$WG_NAME"
