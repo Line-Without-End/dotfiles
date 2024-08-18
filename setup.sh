@@ -16,11 +16,19 @@ pacman -Sy --noconfirm $main
 
 sleep 2 
 
-soft=("ttf-jetbrains-mono" "thunar" "syncthing" "polkit-gnome" "feh" "thunar-volman" "gvfs" "smbclient" "tumbler" "wireguard-tools" "ark") 
+soft=("thunar" "syncthing" "polkit-gnome" "feh" "thunar-volman" "gvfs" "gvfs-smb" "smbclient" "tumbler" "wireguard-tools" "ark") 
 echo "#####################"
 echo "Setup additional soft"
 echo "#####################"
 pacman -Sy --noconfirm $soft
+
+sleep 2
+
+fonts=("ttf-jetbrains-mono" "ttf-dejavu" "ttf-liberation" "noto-fonts-emoji" "noto-fonts-cjk")
+echo "#####################"
+echo "Setup fonts"
+echo "#####################"
+pacman -Sy --noconfirm $fonts
 
 sleep 2
 
