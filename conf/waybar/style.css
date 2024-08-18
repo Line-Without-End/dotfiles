@@ -2,7 +2,7 @@
 * {
   /* font-family: Roboto, Helvetica, Arial, sans-serif; */
   /* reference the color by using @color-name */
-  font-family: "JetBrains Mono";
+  font-family: "JetBrains Mono", sans-serif;
   font-weight: bold;
   color: @text;
   font-size: 18px;

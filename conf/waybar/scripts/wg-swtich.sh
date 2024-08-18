@@ -1,7 +1,7 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 # Укажите имя подключения WireGuard
-WG_NAME="VPN"
+WG_NAME="Latvia VPN"
 # Укажите имя интерфейса WireGuard
 WG_INTERFACE="wg0"
 
@@ -11,3 +11,4 @@ if ip link show "$WG_INTERFACE" &> /dev/null; then
     nmcli con down "$WG_NAME"
 else
     nmcli con up "$WG_NAME"
+fi

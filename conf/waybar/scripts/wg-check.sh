@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 # Укажите имя интерфейса WireGuard
 WG_INTERFACE="wg0"

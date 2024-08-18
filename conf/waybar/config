@@ -5,6 +5,7 @@
     "margin-left": 10,
     "margin-right": 10,
     "spacing": 5,
+    "output": ["HDMI-A-1"],
     "modules-left": [
         "hyprland/workspaces",
         "custom/right-arrow-dark",
@@ -118,12 +119,14 @@
         "interval": 5,
         "format": " {usage}%",
         "max-length": 10,
-        "on-click": "alacritty -e btm --enable_gpu"
+        "on-click": "alacritty -e btm --enable_gpu",
+	"on-click-right": "alacritty -e btm --enable_gpu -b"
     },
     "memory": {
-		"interval": 5,
-		"format": " {}%",
-        "on-click": "alacritty -e btm --enable_gpu"
+	"interval": 5,
+	"format": " {}%",
+        "on-click": "alacritty -e btm --enable_gpu",
+	"on-click-right": "alacritty -e btm --enable_gpu -b"
 	},
     "temperature": {
         "thermal-zone": 2,
